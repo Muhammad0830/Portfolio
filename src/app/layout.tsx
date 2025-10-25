@@ -11,8 +11,8 @@ export const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "News Portal",
-  description: "Built for users to track the news of the world",
+  title: "MuhammadDev portfolio",
+  description: "Built to tell about myself and my projects",
 };
 
 export default async function RootLayout({

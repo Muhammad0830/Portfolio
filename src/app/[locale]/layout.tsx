@@ -1,6 +1,7 @@
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { ThemeProvider } from "next-themes";
 type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
@@ -19,7 +20,14 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body>
         <NextIntlClientProvider>
           <div className="min-h-screen w-full bg-black text-white">
-            {children}
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="light"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
           </div>
         </NextIntlClientProvider>
       </body>
