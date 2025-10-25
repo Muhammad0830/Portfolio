@@ -1,4 +1,5 @@
 "use client";
+import LightModeDarkMode from "@/components/header/LightDarkMode";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/cn";
 import { useTranslations } from "next-intl";
@@ -10,8 +11,8 @@ const Page = () => {
   const nextPathname = nextUsePathname();
 
   return (
-    <div>
-      <span>Next app</span>
+    <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white">
+      <h1>Next app</h1>
 
       <div className="flex flex-col gap-1 items-start">
         <Link
@@ -36,7 +37,9 @@ const Page = () => {
         </Link>
       </div>
 
-      <span>{t("hello")}</span>
+      <LightModeDarkMode />
+
+      <div>{t("hello")}</div>
     </div>
   );
 };
