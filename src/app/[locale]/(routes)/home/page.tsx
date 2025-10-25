@@ -12,7 +12,7 @@ const Page = () => {
 
   return (
     <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white">
-      <span>Next app</span>
+      <h1>Next app</h1>
 
       <div className="flex flex-col gap-1 items-start">
         <Link
@@ -39,7 +39,7 @@ const Page = () => {
 
       <LightModeDarkMode />
 
-      <span>{t("hello")}</span>
+      <div>{t("hello")}</div>
     </div>
   );
 };

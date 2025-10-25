@@ -1,23 +1,29 @@
 "use client";
 import { cn } from "@/lib/cn";
 import { useTheme } from "next-themes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const LightModeDarkMode = () => {
-  const [mounted] = useState(() => typeof window !== "undefined");
-
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  if (!mounted) return null;
+  useEffect(() => {
+    queueMicrotask(() => setMounted(true));
+  }, []);
 
-  const handleToggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+  if (!mounted) {
+    // Return null instead of "loading" to avoid mismatched HTML
+    return null;
+  }
+
+  const handleToggleTheme = (target: "dark" | "light") => {
+    setTheme(target);
   };
 
   return (
     <div className="flex flex-col gap-1 items-start my-4">
       <button
-        onClick={() => handleToggleTheme()}
+        onClick={() => handleToggleTheme("dark")}
         className={cn(
           "text-foreground cursor-pointer px-3 py-1.5 rounded-md border",
           theme === "dark" && "bg-foreground/20"
@@ -26,7 +32,7 @@ const LightModeDarkMode = () => {
         Dark
       </button>
       <button
-        onClick={() => handleToggleTheme()}
+        onClick={() => handleToggleTheme("light")}
         className={cn(
           "cursor-pointer px-3 py-1.5 rounded-md border",
           theme === "light" && "bg-foreground/20"
