@@ -3,10 +3,9 @@ import { routing } from "./i18n/routing";
 import createMiddleware from "next-intl/middleware";
 
 const nextIntlMiddleware = createMiddleware(routing);
-
 const defaultLocale = routing.defaultLocale;
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (pathname === "/") {
@@ -19,8 +18,7 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Match all pathnames except for
-  // - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
-  // - … the ones containing a dot (e.g. `favicon.ico`)
-  matcher: "/((?!api|trpc|_next|_vercel|.*\\..*).*)",
+  matcher: [
+    "/((?!api|trpc|_next|_vercel|.*\\..*).*)"
+  ],
 };
