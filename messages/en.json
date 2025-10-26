@@ -1,3 +1,14 @@
 {
-    "hello": "Hello world"
+    "hello": "Hello world",
+    "header": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "hero": {
+        "title": "Modern Frontend Development with Full-Stack Capability",
+        "description": "Focused on building modern, fast, and intuitive frontends — with solid backend and mobile app experience.",
+        "buttonText": "Happy to chat on"
+    }
 }
