@@ -1,4 +1,5 @@
 "use client";
+import Header from "@/components/header/Header";
 import LightModeDarkMode from "@/components/header/LightDarkMode";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/cn";
@@ -12,6 +13,7 @@ const Page = () => {
 
   return (
     <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white">
+      <Header />
       <h1>Next app</h1>
 
       <div className="flex flex-col gap-1 items-start">
