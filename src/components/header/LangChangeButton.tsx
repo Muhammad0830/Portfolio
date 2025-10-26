@@ -7,7 +7,27 @@ import { usePathname as nextUsePathname } from "next/navigation";
 import { cn } from "@/lib/cn";
 import { useState } from "react";
 
-const LangChangeButton = () => {
+interface LangChangeButtonProps {
+  className?: string;
+  transformOrigin?:
+    | "top"
+    | "bottom"
+    | "left"
+    | "right"
+    | "top-right"
+    | "bottom-right"
+    | "bottom-left"
+    | "top-left";
+  right?: boolean;
+  left?: boolean;
+}
+
+const LangChangeButton = ({
+  className,
+  transformOrigin,
+  right,
+  left,
+}: LangChangeButtonProps) => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const nextPathName = nextUsePathname();
@@ -16,9 +36,12 @@ const LangChangeButton = () => {
     <div className="relative flex justify-center items-center">
       <button
         onClick={() => setOpen(!open)}
-        className="p-2 z-1 cursor-pointer rounded-md border border-foreground/10 hover:border-foreground/20 hover:bg-foreground/10 dark:hover:bg-foreground/15 transition-colors bg-foreground/0"
+        className={cn(
+          "p-1.5 z-1 cursor-pointer rounded-md border border-foreground/10 hover:border-foreground/20 hover:bg-foreground/10 dark:hover:bg-foreground/15 transition-colors bg-foreground/0",
+          className
+        )}
       >
-        <Globe className="w-5 h-5 text-foreground" />
+        <Globe className="w-6 h-6 text-foreground" />
       </button>
 
       <motion.div
@@ -29,7 +52,12 @@ const LangChangeButton = () => {
             : { scale: 0.5, top: "75%", opacity: 0 }
         }
         transition={{ duration: 0.3, type: "spring" }}
-        className="absolute p-1 origin-top rounded-sm z-0 flex flex-col gap-0.5 bg-foreground/5 border border-foreground/20"
+        className={cn(
+          "absolute p-1 rounded-sm z-0 flex flex-col gap-0.5 bg-foreground/5 border border-foreground/20",
+          transformOrigin ? `origin-${transformOrigin}` : "origin-top",
+          right && "right-0",
+          left && "left-0"
+        )}
       >
         <Link
           href={pathname}

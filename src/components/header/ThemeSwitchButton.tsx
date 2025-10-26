@@ -3,8 +3,9 @@
 import { Moon, Sun } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
+import { cn } from "@/lib/cn";
 
-const ThemeSwitchButton = () => {
+const ThemeSwitchButton = ({ className }: { className?: string }) => {
   const { theme, setTheme } = useTheme();
 
   const handleToggleTheme = () => {
@@ -15,7 +16,10 @@ const ThemeSwitchButton = () => {
     <div>
       <button
         onClick={handleToggleTheme}
-        className="relative z-10 overflow-hidden cursor-pointer p-1.5 rounded-md border border-foreground/10 hover:border-foreground/20 hover:bg-foreground/10 dark:hover:bg-foreground/15 transition-colors bg-foreground/0"
+        className={cn(
+          "relative z-10 overflow-hidden cursor-pointer p-1.5 rounded-md border border-foreground/10 hover:border-foreground/20 hover:bg-foreground/10 dark:hover:bg-foreground/15 transition-colors bg-foreground/0",
+          className
+        )}
       >
         <motion.div
           initial={{ y: "0%", rotate: 0, x: 0 }}
