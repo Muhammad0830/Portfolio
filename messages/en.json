@@ -10,5 +10,21 @@
         "title": "Modern Frontend Development with Full-Stack Capability",
         "description": "Focused on building modern, fast, and intuitive frontends — with solid backend and mobile app experience.",
         "buttonText": "Happy to chat on"
+    },
+    "about": {
+        "section_title": "About Me",
+        "about_me_text": "Hi, I'm Muhammad Abduqayumov — Full-Stack Developer with a strong focus on frontend development.",
+        "see_work_btn": "See my work",
+        "download_cv_btn": "Download CV",
+        "projects": "Projects",
+        "yearsExp": "Years Exp",
+        "remote": "Remote",
+        "available": "Available",
+        "what_i_do": "What I do"
+    },
+    "skills": {
+        "my_skills": "My Skills",
+        "all": "All",
+        "more": "More"
     }
 }
