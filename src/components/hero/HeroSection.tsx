@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu } from "lucide-react";
 import MenuIcon from "./MenuIcon";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -93,7 +92,7 @@ const HeroSection = () => {
             >
               <AnimatePresence>
                 {open &&
-                  socials.map(({ label, href, icon }, index) => (
+                  socials.map(({ href, icon }, index) => (
                     <motion.a
                       href={href}
                       key={index}
