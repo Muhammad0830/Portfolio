@@ -3,7 +3,7 @@
 import { Moon, Sun } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 const ThemeSwitchButton = ({ className }: { className?: string }) => {
   const { theme, setTheme } = useTheme();

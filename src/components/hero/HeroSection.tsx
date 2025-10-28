@@ -58,16 +58,28 @@ const HeroSection = () => {
   return (
     <div className="min-h-screen py-20 flex gap-4">
       {/* text */}
-      <div className="flex flex-col items-start justify-center flex-1">
+      <div className="flex flex-col sm:items-start items-center justify-center flex-1 sm:px-0 px-4 max-sm:text-center">
         <p className="text-primary text-base font-medium">Muhammad A.</p>
-        <h1 className="text-4xl font-semibold">{t("title")}</h1>
-        <h5 className="text-lg opacity-70 font-light w-4/5">
+        <h1 className="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-semibold">
+          {t("title")}
+        </h1>
+        <h5 className="text-lg opacity-70 font-light lg:w-4/5">
           {t("description")}
         </h5>
 
-        <div className="mt-3 rounded-full border-foreground border pl-2 pr-1 py-1 flex gap-2">
-          <div className="my-1 ml-1 text-lg">{t("buttonText")}</div>
-          <div className="relative flex">
+        <div className="relative mt-3 rounded-full border-foreground border pl-2 pr-1 py-1 flex gap-2">
+          <div className="my-1 sm:ml-1 sm:text-lg text-sm">
+            {t("buttonText")}
+          </div>
+          <button
+            onClick={() => setOpen(!open)}
+            className="flex justify-center items-center sm:hidden h-full aspect-square bg-foreground rounded-full"
+          >
+            <div className="scale-90">
+              <MenuIcon open={open} setOpen={setOpen} />
+            </div>
+          </button>
+          <div className="relative sm:flex hidden">
             <motion.button
               onClick={onSocialsBtnClick}
               whileHover={{ scale: 1.05 }}
@@ -126,11 +138,53 @@ const HeroSection = () => {
               </AnimatePresence>
             </motion.div>
           </div>
+
+          {/* mobile socials menu */}
+          <AnimatePresence>
+            {open && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0, transition: { duration: 0.2, delay: 0.3 } }}
+                className="translate-y-3 absolute top-full flex sm:hidden -left-full -right-full gap-2 justify-center place-self-center"
+              >
+                {socials.map(({ href, icon }, index) => (
+                  <motion.a
+                    href={href}
+                    key={index}
+                    initial={{
+                      opacity: 0,
+                      scale: 0,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                      transition: { delay: index * 0.07 },
+                    }}
+                    exit={{
+                      opacity: 0,
+                      scale: 0,
+                      transition: {
+                        delay: (socials.length - index) * 0.1,
+                        duration: 0.1,
+                      },
+                    }}
+                    transition={{ duration: 0.3, type: "tween" }}
+                    className="bg-white border w-9! h-9! flex items-center justify-center rounded-full"
+                  >
+                    {icon}
+                  </motion.a>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
 
       {/* image / video / 3d-object */}
-      <div className="flex items-center justify-center flex-1">HeroSection</div>
+      <div className="sm:flex hidden items-center justify-center flex-1">
+        HeroSection
+      </div>
     </div>
   );
 };

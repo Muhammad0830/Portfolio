@@ -14,34 +14,40 @@ const AboutMeSection = () => {
     <div className="space-y-10">
       <SectionTitle>{t("section_title")}</SectionTitle>
 
-      <div className="flex md:gap-8 gap-4 lg:w-[90%] mx-auto">
-        <div className="flex-1 bg-primary/10 border border-foreground/30 rounded-lg p-4 space-y-4">
+      <div className="flex sm:flex-row flex-col min-[400px]:w-[90%] min-[400px]:max-w-[450px] sm:max-w-[2000px] md:gap-4 gap-4 lg:w-[90%] mx-auto">
+        <div className="flex-1 bg-primary/10 border border-foreground/30 rounded-lg p-4 md:space-y-4 space-y-2">
           <p className="text-xl">{t("about_me_text")}</p>
-          <div className="w-full grid grid-cols-3 lg:gap-4 gap-2">
-            <div className="px-4 py-4 flex-col flex gap-1 items-center border rounded-md border-foreground/30 bg-foreground/5">
-              <span className="lg:text-xl text-lg font-semibold">{projectNumber}+</span>
-              <span className="opacity-70 lg:text-sm text-xs font-normal">
+          <div className="w-full grid min-[400px]:grid-cols-3 grid-cols-1 lg:gap-4 gap-2">
+            <div className="max-[400px]:flex-row max-[400px]:justify-center max-[400px]:gap-4 px-4 py-4 flex-col flex gap-1 items-center border rounded-md border-foreground/30 bg-foreground/5">
+              <span className="lg:text-xl text-lg max-[400px]:text-2xl font-semibold">
+                {projectNumber}+
+              </span>
+              <span className="opacity-70 lg:text-sm text-xs font-normal text-center">
                 {t("projects")}
               </span>
             </div>
-            <div className="px-4 py-4 flex-col flex gap-1 items-center border rounded-md border-foreground/30 bg-foreground/5">
-              <span className="lg:text-xl text-lg font-semibold">{yearsExp}+</span>
-              <span className="opacity-70 lg:text-sm text-xs font-normal">
+            <div className="max-[400px]:flex-row max-[400px]:justify-center max-[400px]:gap-4 px-4 py-4 flex-col flex gap-1 items-center border rounded-md border-foreground/30 bg-foreground/5">
+              <span className="max-[400px]:text-2xl lg:text-xl text-lg font-semibold">
+                {yearsExp}+
+              </span>
+              <span className="opacity-70 lg:text-sm text-xs font-normal text-center">
                 {t("yearsExp")}
               </span>
             </div>
-            <div className="px-4 py-4 flex-col flex gap-1 items-center border rounded-md border-foreground/30 bg-foreground/5">
-              <span className="lg:text-xl text-lg font-semibold">{t("remote")}</span>
-              <span className="opacity-70 lg:text-sm text-xs font-normal">
+            <div className="max-[400px]:flex-row max-[400px]:justify-center max-[400px]:gap-4 px-4 py-4 flex-col flex gap-1 items-center border rounded-md border-foreground/30 bg-foreground/5">
+              <span className="max-[400px]:text-2xl lg:text-xl text-lg font-semibold">
+                {t("remote")}
+              </span>
+              <span className="opacity-70 lg:text-sm text-xs font-normal text-center">
                 {t("available")}
               </span>
             </div>
           </div>
-          <div className="flex gap-4 items-center">
-            <button className="rounded-md border border-primary/60 bg-primary/10 px-4 py-2 cursor-pointer hover:bg-primary/20">
+          <div className="flex md:gap-4 gap-2 items-center max-sm:justify-center">
+            <button className="max-sm:flex-1 max-sm:max-w-[170px] max-sm:py-2 max-[400px]:text-sm text-base rounded-md border border-primary/60 bg-primary/10 md:px-4 md:py-3 px-2.5 py-1 cursor-pointer hover:bg-primary/20">
               {t("see_work_btn")}
             </button>
-            <button className="rounded-md border border-primary/60 bg-primary/10 px-4 py-2 cursor-pointer hover:bg-primary/20">
+            <button className="max-sm:flex-1 max-sm:max-w-[170px] max-sm:py-2 max-[400px]:text-sm text-base rounded-md border border-primary/60 bg-primary/10 md:px-4 md:py-3 px-2.5 py-1 cursor-pointer hover:bg-primary/20">
               {t("download_cv_btn")}
             </button>
           </div>

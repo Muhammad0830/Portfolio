@@ -25,6 +25,10 @@
     "skills": {
         "my_skills": "My Skills",
         "all": "All",
-        "more": "More"
+        "more": "More",
+        "Filters": "Filters",
+        "no_skills_found": "No skills found",
+        "try_changing_filters": "Try changing filters",
+        "reset": "RESET"
     }
 }
