@@ -1,0 +1,96 @@
+import { Project } from "@/types/types";
+
+const projects: Project[] = [
+  {
+    title: "portfolio",
+    description: "portfolio",
+    codeLink: "https://github.com/Muhammad0830/Portfolio",
+    link: "https://portfolio-eosin-phi-53.vercel.app/",
+    categories: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "Framer Motion",
+    ],
+    createdAt: "2023",
+    image: "/images/portfolio.png",
+  },
+  {
+    title: "portfolio",
+    description: "portfolio",
+    codeLink: "https://github.com/Muhammad0830/Portfolio",
+    link: "https://portfolio-eosin-phi-53.vercel.app/",
+    categories: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "Framer Motion",
+    ],
+    createdAt: "2023",
+    image: "/images/portfolio.png",
+  },
+  {
+    title: "portfolio",
+    description: "portfolio",
+    codeLink: "https://github.com/Muhammad0830/Portfolio",
+    link: "https://portfolio-eosin-phi-53.vercel.app/",
+    categories: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "Framer Motion",
+    ],
+    createdAt: "2023",
+    image: "/images/portfolio.png",
+  },
+  {
+    title: "portfolio",
+    description: "portfolio",
+    codeLink: "https://github.com/Muhammad0830/Portfolio",
+    link: "https://portfolio-eosin-phi-53.vercel.app/",
+    categories: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "Framer Motion",
+    ],
+    createdAt: "2023",
+    image: "/images/portfolio.png",
+  },
+  {
+    title: "portfolio",
+    description: "portfolio",
+    codeLink: "https://github.com/Muhammad0830/Portfolio",
+    link: "https://portfolio-eosin-phi-53.vercel.app/",
+    categories: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "Framer Motion",
+    ],
+    createdAt: "2023",
+    image: "/images/portfolio.png",
+  },
+  {
+    title: "portfolio",
+    description: "portfolio",
+    codeLink: "https://github.com/Muhammad0830/Portfolio",
+    link: "https://portfolio-eosin-phi-53.vercel.app/",
+    categories: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "Framer Motion",
+    ],
+    createdAt: "2023",
+    image: "/images/portfolio.png",
+  },
+];
+
+export default projects;

@@ -5,6 +5,16 @@ export interface Skill {
 }
 
 export interface FiltersProps {
-    category: string;
-    level: string;
+  category: string;
+  level: string;
+}
+
+export interface Project {
+  title: string;
+  description: string;
+  codeLink: string;
+  link: string;
+  categories: string[];
+  createdAt: string;
+  image: string;
 }
