@@ -44,9 +44,6 @@ const SkillsSection = () => {
       <div className="flex justify-center">
         <Filters allSkills={skills} filters={filters} setFilters={setFilters} />
       </div>
-
-      {/* Skills list */}
-      <div></div>
     </div>
   );
 };

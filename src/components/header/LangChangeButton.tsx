@@ -4,7 +4,7 @@ import { Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link, usePathname } from "@/i18n/navigation";
 import { usePathname as nextUsePathname } from "next/navigation";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 interface LangChangeButtonProps {
