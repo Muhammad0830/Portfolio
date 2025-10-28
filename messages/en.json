@@ -30,5 +30,8 @@
         "no_skills_found": "No skills found",
         "try_changing_filters": "Try changing filters",
         "reset": "RESET"
+    },
+    "projects": {
+        "title": "Selected Projects"
     }
 }

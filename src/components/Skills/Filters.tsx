@@ -28,7 +28,7 @@ const Filters = ({
   });
 
   return (
-    <div className="w-full flex flex-col gap-4 items-center pb-[1000px]">
+    <div className="w-full flex flex-col gap-4 items-center">
       <MainFilters
         filters={filters}
         setFilters={setFilters}
