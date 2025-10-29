@@ -1,14 +1,13 @@
 "use client";
 import { Project } from "@/types/types";
-import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { Ellipsis } from "lucide-react";
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import NextLink from "next/link";
+import { Link } from "lucide-react";
 
 const ProjectCard = ({ project }: { project: Project }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const t = useTranslations("projects");
   const [width, setWidth] = useState<number | null>(null);
 
   useEffect(() => {
@@ -31,20 +30,29 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
   return (
     <div className="p-4 flex flex-col gap-2 rounded-sm bg-primary/10">
-      <Link
+      <NextLink
         target="_blank"
         rel="noopener noreferrer"
         href={project.link}
         className="w-full aspect-video"
       >
         Image
-      </Link>
-      <Link target="_blank" rel="noopener noreferrer" href={project.link}>
+      </NextLink>
+      <NextLink target="_blank" rel="noopener noreferrer" href={project.link}>
         <h3 className="md:text-lg text-base font-semibold">{project.title}</h3>
-      </Link>
-      <Link target="_blank" rel="noopener noreferrer" href={project.link}>
-        <p className="text-sm opacity-80 mb-2">{project.description}</p>
-      </Link>
+      </NextLink>
+      <NextLink target="_blank" rel="noopener noreferrer" href={project.link}>
+        <p className="text-sm opacity-80 mb-1">{project.description}</p>
+      </NextLink>
+      <NextLink
+        target="__blank"
+        rel="noopener noreferrer"
+        href={project.codeLink}
+        className="mb-2 flex items-center gap-2"
+      >
+        <Link className="w-3.5 h-3.5" />
+        <span>Github</span>
+      </NextLink>
 
       <div className="flex gap-4 items-center justify-between">
         <div className="flex gap-2 items-center">
