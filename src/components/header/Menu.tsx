@@ -13,7 +13,6 @@ interface navLinksProps {
 
 const MenuButton = ({ navLinks }: { navLinks: navLinksProps[] }) => {
   const [open, setOpen] = useState(false);
-  console.log(navLinks);
 
   return (
     <div className="relative sm:hidden flex">

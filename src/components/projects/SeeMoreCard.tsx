@@ -7,7 +7,6 @@ import React from "react";
 const SeeMoreCard = ({ projects }: { projects: Project[] }) => {
   const t = useTranslations("projects");
   const projectsToShow = projects.slice(5);
-  console.log("projectsToShow", projectsToShow);
 
   return (
     <div className="w-full sm:flex hidden h-full p-4 flex-col gap-2 rounded-sm bg-primary/10">
