@@ -44,5 +44,8 @@
         "Submit": "Submit",
         "WriteHere": "Write your words here",
         "type_here": "type here..."
-    }
+    },
+    "lets_make_it_happen": "Let’s make your ideas happen!",
+    "copyright": "© 2025 Muhammad Abdukayumov",
+    "built_with": "— Built with ❤️ using Next.js & Tailwind CSS"
 }
