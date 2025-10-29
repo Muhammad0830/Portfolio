@@ -34,5 +34,15 @@
     "projects": {
         "title": "Selected Projects",
         "seeMore": "See More"
+    },
+    "contact": {
+        "title": "Contact",
+        "description_1": "Got a project in mind? Let's talk about it.",
+        "description_2": "Use these methods to get in touch with me.",
+        "Email": "Email",
+        "PhoneNumber": "Phone Number",
+        "Submit": "Submit",
+        "WriteHere": "Write your words here",
+        "type_here": "type here..."
     }
 }

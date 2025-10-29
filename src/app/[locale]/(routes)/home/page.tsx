@@ -1,5 +1,6 @@
 "use client";
 import AboutMeSection from "@/components/about/AboutMeSection";
+import ContactSection from "@/components/contact/ContactSection";
 import Header from "@/components/header/Header";
 import HeroSection from "@/components/hero/HeroSection";
 import ProjectsSection from "@/components/projects/ProjectsSection";
@@ -13,6 +14,7 @@ const Page = () => {
       <AboutMeSection />
       <SkillsSection />
       <ProjectsSection />
+      <ContactSection />
     </div>
   );
 };
