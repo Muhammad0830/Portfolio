@@ -32,6 +32,7 @@
         "reset": "RESET"
     },
     "projects": {
-        "title": "Selected Projects"
+        "title": "Selected Projects",
+        "seeMore": "See More"
     }
 }
