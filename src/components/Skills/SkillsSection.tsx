@@ -5,6 +5,7 @@ import SectionTitle from "../SectionTitle";
 import Filters from "./Filters";
 import { useState } from "react";
 import { FiltersProps, Skill } from "@/types/types";
+import { motion } from "framer-motion";
 
 const skills: Skill[] = [
   { name: "HTML", level: "main", category: "frontend" },
@@ -37,14 +38,20 @@ const SkillsSection = () => {
   });
   const t = useTranslations("skills");
   return (
-    <div className="space-y-10">
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="space-y-10 py-20 min-h-screen flex flex-col justify-center"
+    >
       <SectionTitle>{t("my_skills")}</SectionTitle>
 
       {/* filter section */}
       <div className="flex justify-center">
         <Filters allSkills={skills} filters={filters} setFilters={setFilters} />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -15,7 +15,7 @@ const Footer = () => {
         <p className="text-nowrap">{t("built_with")}</p>
       </div>
     </div>
-  );
+  );w
 };
 
 export default Footer;

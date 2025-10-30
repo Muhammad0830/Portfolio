@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import MenuIcon from "./MenuIcon";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -11,14 +11,28 @@ import {
   faLinkedin,
   faTelegram,
 } from "@fortawesome/free-brands-svg-icons";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
-const HeroSection = () => {
+const HeroSection = ({
+  onVisibilityChange,
+}: {
+  onVisibilityChange: (visible: boolean) => void;
+}) => {
   const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    amount: 0.5,
+  });
+
+  useEffect(() => {
+    onVisibilityChange(isInView);
+  }, [isInView, onVisibilityChange]);
 
   const t = useTranslations("hero");
 
   const onSocialsBtnClick = () => {
-    setOpen(!open); // toggle on parent click
+    setOpen(!open);
   };
 
   const socials = [
@@ -56,7 +70,13 @@ const HeroSection = () => {
   ];
 
   return (
-    <div className="min-h-screen py-20 flex gap-4">
+    <motion.div
+      className="min-h-screen py-20 flex gap-4"
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
       {/* text */}
       <div className="flex flex-col sm:items-start items-center justify-center flex-1 sm:px-0 px-4 max-sm:text-center">
         <p className="text-primary text-base font-medium">Muhammad A.</p>
@@ -182,10 +202,13 @@ const HeroSection = () => {
       </div>
 
       {/* image / video / 3d-object */}
-      <div className="sm:flex hidden items-center justify-center flex-1">
+      <div
+        ref={ref}
+        className="sm:flex hidden items-center justify-center flex-1 bg-red-500"
+      >
         HeroSection
       </div>
-    </div>
+    </motion.div>
   );
 };
 

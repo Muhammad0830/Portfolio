@@ -2,6 +2,7 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import SectionTitle from "../SectionTitle";
+import { motion } from "framer-motion";
 
 const AboutMeSection = () => {
   const t = useTranslations("about");
@@ -11,7 +12,13 @@ const AboutMeSection = () => {
   const yearsExp = 2;
 
   return (
-    <div className="space-y-10">
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="space-y-10 py-20 min-h-screen flex flex-col justify-center"
+    >
       <SectionTitle>{t("section_title")}</SectionTitle>
 
       <div className="flex sm:flex-row flex-col min-[400px]:w-[90%] min-[400px]:max-w-[450px] sm:max-w-[2000px] md:gap-4 gap-4 lg:w-[90%] mx-auto">
@@ -127,7 +134,7 @@ const AboutMeSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
