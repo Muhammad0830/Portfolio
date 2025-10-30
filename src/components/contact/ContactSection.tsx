@@ -1,13 +1,19 @@
 "use client";
 import { useTranslations } from "next-intl";
-import React from "react";
 import SectionTitle from "../SectionTitle";
+import { motion } from "framer-motion";
 
 const ContactSection = () => {
   const t = useTranslations("contact");
 
   return (
-    <div className="space-y-4">
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="space-y-4 py-20 min-h-screen flex flex-col justify-center"
+    >
       <SectionTitle>{t("title")}</SectionTitle>
 
       <div className="flex items-center flex-col gap-1 sm:text-lg text-center">
@@ -54,7 +60,7 @@ const ContactSection = () => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
