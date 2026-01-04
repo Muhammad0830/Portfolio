@@ -71,14 +71,14 @@ const HeroSection = ({
 
   return (
     <motion.div
-      className="min-h-screen py-20 flex gap-4"
+      className="min-h-screen py-20 flex justify-center gap-4 w-full"
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true }}
     >
       {/* text */}
-      <div className="flex flex-col sm:items-start items-center justify-center flex-1 sm:px-0 px-4 max-sm:text-center">
+      <div className="lg:w-[80%] md:w-[90%] w-full text-center justify-self-center flex flex-col items-center justify-center sm:px-0 px-4 max-sm:text-center">
         <p className="text-primary text-base font-medium">Muhammad A.</p>
         <h1 className="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-semibold">
           {t("title")}
@@ -202,12 +202,12 @@ const HeroSection = ({
       </div>
 
       {/* image / video / 3d-object */}
-      <div
+      {/* <div
         ref={ref}
-        className="sm:flex hidden items-center justify-center flex-1 bg-red-500"
+        className="sm:flex hidden items-center justify-center flex-1 bg-transparent"
       >
-        HeroSection
-      </div>
+        Image
+      </div> */}
     </motion.div>
   );
 };
